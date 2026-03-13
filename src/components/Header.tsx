@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Globe, ArrowRight, X } from 'lucide-react';
+import { Globe, ArrowRight, X, Menu } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 type Language = { label: string; active?: boolean; };
@@ -20,6 +20,7 @@ export const Header = ({ transparentAtTop = false }: { transparentAtTop?: boolea
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isAtTop, setIsAtTop] = useState(true);
   const location = useLocation();
 
@@ -41,10 +42,10 @@ export const Header = ({ transparentAtTop = false }: { transparentAtTop?: boolea
   }, [lastScrollY]);
 
   useEffect(() => {
-    document.body.style.overflow = isSidebarOpen ? 'hidden' : 'auto';
-  }, [isSidebarOpen]);
+    document.body.style.overflow = (isSidebarOpen || isMobileMenuOpen) ? 'hidden' : 'auto';
+  }, [isSidebarOpen, isMobileMenuOpen]);
 
-  const bgClass = transparentAtTop && isAtTop && !isSidebarOpen 
+  const bgClass = transparentAtTop && isAtTop && !isSidebarOpen && !isMobileMenuOpen 
     ? 'bg-transparent' 
     : 'bg-[#0a0a0a]';
 
@@ -52,6 +53,8 @@ export const Header = ({ transparentAtTop = false }: { transparentAtTop?: boolea
     if (location.pathname === '/') return true;
     return location.pathname.startsWith(path);
   };
+
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   return (
     <>
@@ -61,9 +64,17 @@ export const Header = ({ transparentAtTop = false }: { transparentAtTop?: boolea
         } ${bgClass}`}
       >
         <div className="max-w-[1440px] mx-auto px-6 h-20 flex items-center justify-between border-b border-white/20">
-          <Link to="/" className="text-2xl font-bold tracking-widest relative z-[70]">
-            SAMPLEnAME
-          </Link>
+          <div className="flex items-center gap-4 z-[70]">
+            <button 
+              className="md:hidden p-1 -ml-1 text-white"
+              onClick={() => setIsMobileMenuOpen(true)}
+            >
+              <Menu size={24} />
+            </button>
+            <Link to="/" className="text-2xl font-bold tracking-widest relative" onClick={closeMobileMenu}>
+              SAMPLEnAME
+            </Link>
+          </div>
 
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium relative z-[70]">
             <Link 
@@ -92,12 +103,12 @@ export const Header = ({ transparentAtTop = false }: { transparentAtTop?: boolea
             </Link>
           </nav>
 
-          <div className="flex items-center gap-6 text-sm font-medium relative z-[70]">
+          <div className="flex items-center gap-4 md:gap-6 text-sm font-medium relative z-[70]">
             <button onClick={() => setIsSidebarOpen(true)} className="flex items-center gap-2 text-white hover:text-gray-300 transition-colors cursor-pointer">
               <Globe size={18} />
-              Global
+              <span className="hidden md:inline">Global</span>
             </button>
-            <Link to="/contact" className={`flex items-center gap-2 transition-colors hover:text-gray-300 'text-white'}`}>
+            <Link to="/contact" className={`hidden md:flex items-center gap-2 transition-colors hover:text-gray-300 text-white`} onClick={closeMobileMenu}>
               Get in touch
               <ArrowRight size={18} />
             </Link>
@@ -106,8 +117,45 @@ export const Header = ({ transparentAtTop = false }: { transparentAtTop?: boolea
       </header>
 
       <div 
+        className={`fixed inset-0 bg-[#0a0a0a] text-white z-[80] transition-transform duration-500 ease-in-out md:hidden flex flex-col ${
+          isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full'
+        }`}
+      >
+        <div className="h-20 px-6 flex items-center justify-between border-b border-white/20 shrink-0">
+          <span className="text-2xl font-bold tracking-widest">
+            SAMPLEnAME
+          </span>
+          <button onClick={closeMobileMenu} className="p-2 -mr-2">
+            <X size={28} />
+          </button>
+        </div>
+
+        <nav className="flex flex-col px-6 py-12 gap-8 text-3xl font-bold overflow-y-auto">
+          <Link to="/about" onClick={closeMobileMenu} className={`transition-colors ${isActive('/about') ? 'text-[#45CC82]' : 'text-white'}`}>
+            About
+          </Link>
+          <Link to="/services" onClick={closeMobileMenu} className={`transition-colors ${isActive('/services') ? 'text-[#45CC82]' : 'text-white'}`}>
+            Services
+          </Link>
+          <Link to="/work" onClick={closeMobileMenu} className={`transition-colors ${isActive('/work') ? 'text-[#45CC82]' : 'text-white'}`}>
+            Work
+          </Link>
+          <Link to="/insights" onClick={closeMobileMenu} className={`transition-colors ${isActive('/insights') ? 'text-[#45CC82]' : 'text-white'}`}>
+            Thoughts & Views
+          </Link>
+          
+          <div className="mt-8 pt-8 border-t border-white/20">
+            <Link to="/contact" onClick={closeMobileMenu} className="flex items-center gap-4 text-xl">
+              Get in touch
+              <ArrowRight size={24} />
+            </Link>
+          </div>
+        </nav>
+      </div>
+
+      <div 
         onClick={() => setIsSidebarOpen(false)}
-        className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-[80] transition-opacity duration-300 ${
+        className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-[80] transition-opacity duration-300 hidden md:block ${
           isSidebarOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       />
@@ -118,11 +166,13 @@ export const Header = ({ transparentAtTop = false }: { transparentAtTop?: boolea
           isSidebarOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        <button onClick={() => setIsSidebarOpen(false)} className="absolute top-6 right-6 p-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer">
-          <X size={24} />
-        </button>
+        <div className="flex justify-end md:block">
+          <button onClick={() => setIsSidebarOpen(false)} className="md:absolute md:top-6 md:right-6 p-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer">
+            <X size={24} />
+          </button>
+        </div>
 
-        <div className="mt-12 space-y-8">
+        <div className="mt-8 md:mt-12 space-y-8">
           {markets.map((market, idx) => (
             <div key={idx} className="flex flex-col gap-1 cursor-pointer">
               <span className="font-bold text-lg">{market.name}</span>
