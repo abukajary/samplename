@@ -1,6 +1,5 @@
 import { ChevronDown } from 'lucide-react';
-// Предположим, вы переименовали файл вassets, чтобы было понятно, что он вертикальный
-import homeHeroImg from '../assets/home-hero-portrait.jpg'; 
+import homeHeroImg from '../assets/home-hero-portrait.jpg';
 
 export const HomeHero = () => {
   const handleScroll = () => {
@@ -13,41 +12,40 @@ export const HomeHero = () => {
   return (
     <section className="relative h-screen w-full text-white overflow-hidden bg-black">
       
-      {/* --- БЛОК ФОНА С БЛЮРОМ --- */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        {/* Это изображение растянуто и сильно размыто */}
+      {/* СЛОЙ 1: Размытый фон (видно только на десктопе по бокам) */}
+      <div className="absolute inset-0 z-0 overflow-hidden hidden md:block">
         <img 
           src={homeHeroImg} 
           alt="Hero background blur" 
           className="w-full h-full object-cover scale-110 blur-3xl opacity-50" 
         />
-        {/* Дополнительный темный оверлей для читаемости текста */}
         <div className="absolute inset-0 bg-black/40"></div>
       </div>
 
-      {/* --- БЛОК ЧЕТКОГО ИЗОБРАЖЕНИЯ ПО ЦЕНТРУ --- */}
+      {/* СЛОЙ 2: Основная картинка */}
       <div className="absolute inset-0 z-10 flex items-center justify-center">
-        {/* Это изображение не обрезается (object-contain) и стоит по центру */}
         <img 
           src={homeHeroImg} 
           alt="Pulse Media" 
-          className="h-full w-auto object-contain" 
+          className="w-full h-full object-cover md:object-contain" 
         />
+        {/* Затемнение для мобилок, чтобы текст читался поверх фото */}
+        <div className="absolute inset-0 bg-black/40 md:hidden z-10"></div>
       </div>
 
-      {/* --- ТЕКСТОВЫЙ КОНТЕНТ (ПОВЕРХ ВСЕГО) --- */}
-      {/* Убедимся, что z-index выше, чем у центрального фото */}
+      {/* --- ТЕКСТОВЫЙ КОНТЕНТ --- */}
       <div className="absolute bottom-12 left-0 w-full z-20">
-        <div className="max-w-[1440px] mx-auto px-6 flex items-end justify-between">
-          
-          <div className="flex-1 pb-1 hidden md:block">
+        
+        {/* Десктопная версия (раскидано по углам) */}
+        <div className="hidden md:flex max-w-[1440px] mx-auto px-6 items-end justify-between">
+          <div className="flex-1 pb-1">
             <p className="text-[11px] font-semibold leading-none tracking-wide text-white/90 uppercase">
               Pulse media
             </p>
           </div>
 
           <div className="flex-none text-center">
-            <h1 className="text-[#45CC82] text-[16px] font-bold leading-none uppercase mx-auto text-balance bg-black/20 py-1 px-2 rounded-sm backdrop-blur-sm md:bg-transparent md:p-0 md:backdrop-blur-none">
+            <h1 className="text-[#45CC82] text-[16px] font-bold leading-none uppercase mx-auto text-balance">
               В ритме города. Создаем охват
             </h1>
           </div>
@@ -55,20 +53,33 @@ export const HomeHero = () => {
           <div className="flex-1 flex justify-end">
             <button 
               onClick={handleScroll}
-              className="flex items-center gap-1.5 text-[11px] font-semibold leading-none hover:text-[#45CC82] transition-colors cursor-pointer text-white/90"
+              className="flex items-center gap-1.5 text-[11px] font-semibold leading-none hover:text-[#45CC82] transition-colors cursor-pointer text-white/90 uppercase"
             >
               <span>Вниз</span>
               <ChevronDown size={14} className="mt-0.5" strokeWidth={2.5} />
             </button>
           </div>
-
         </div>
 
-        <div className="block md:hidden max-w-[1440px] mx-auto px-6 mt-6">
-           <p className="text-[11px] font-semibold leading-none tracking-wide text-white/70 text-center uppercase">
-              Pulse media
-            </p>
+        {/* Мобильная версия (всё по центру в столбик) */}
+        <div className="flex flex-col items-center justify-center gap-4 md:hidden px-6 text-center">
+          <h1 className="text-[#45CC82] text-[15px] font-bold leading-none uppercase text-balance">
+            В ритме города. Создаем охват
+          </h1>
+          
+          <p className="text-[10px] font-semibold tracking-widest text-white/70 uppercase">
+            Pulse media
+          </p>
+
+          <button 
+            onClick={handleScroll}
+            className="flex flex-col items-center gap-1 mt-2 text-[10px] font-semibold tracking-widest hover:text-[#45CC82] transition-colors cursor-pointer text-white/90 uppercase"
+          >
+            <span>Вниз</span>
+            <ChevronDown size={14} strokeWidth={2.5} />
+          </button>
         </div>
+
       </div>
       
     </section>
