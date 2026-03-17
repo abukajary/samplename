@@ -8,7 +8,7 @@ export const Leadership = () => {
           Leadership
         </span>
         <h2 className="text-5xl md:text-7xl font-bold tracking-tighter uppercase mb-12">
-          Guiding the Vision
+          Что то про СЕО?
         </h2>
 
         <div className="border-t border-[#0a0a0a] py-12 md:py-16">

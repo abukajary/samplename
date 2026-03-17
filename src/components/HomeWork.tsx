@@ -42,13 +42,14 @@ export const HomeWork = () => {
         
         <div className="flex flex-col items-center text-center mb-20 md:mb-32">
           <span className="text-[#45CC82] font-bold text-[11px] md:text-xs tracking-[0.2em] uppercase mb-6">
-            Our work
+            Примеры проектов
           </span>
           <h2 className="text-5xl md:text-7xl lg:text-[5rem] font-bold tracking-tight uppercase mb-10 leading-none">
-            Advancing brands
+            Развиваем бренды
           </h2>
           <p className="text-gray-400 text-sm md:text-base leading-relaxed max-w-[480px]">
-            At iProspect, we accelerate growth that shapes the future. By blending creativity with data-driven insights, we craft bold, personalized stories that resonate across all platforms, transforming fleeting moments into lasting engagement.
+            В Pulse Media мы ускоряем рост, который формирует будущее.
+            Сочетая креативность с аналитическими данными, мы создаем смелые, персонализированные истории, которые находят отклик на всех платформах, превращая мимолетные моменты в долгосрочное взаимодействие.
           </p>
         </div>
 

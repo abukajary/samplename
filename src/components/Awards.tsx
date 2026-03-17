@@ -1,9 +1,8 @@
 const awardsData = [
-  { org: 'RECMA', title: 'Highest-Growth Media Network Globally', year: '2024' },
-  { org: 'Digital Cinema Media Awards', title: 'Best Long-term Use of Cinema, iProspect UK x IKEA', year: '2023' },
-  { org: 'Advertising Week Africa', title: 'Future is Female Awards, iProspect Kenya', year: '2023' },
-  { org: 'Effie Awards Latin America', title: 'Influencer, iProspect Brazil x FYS', year: '2023' },
-  { org: 'MediaPost', title: 'Search/Performance Agency of the Year, iProspect USA', year: '2023' },
+  { org: 'E+ Awards Центральная Азия', title: 'Эффективность в медиа: Интеграция DOOH и Digital', year: '2025' },
+  { org: 'Jolbors Festival', title: 'Лучшая интегрированная медиакампания', year: '2024' },
+  { org: 'Tribune Awards', title: 'Инновации в наружной рекламе', year: '2024' },
+  { org: 'Национальная премия Маркетинг', title: 'Медийное агентство года', year: '2023' },
 ];
 
 export const Awards = () => {
@@ -11,7 +10,7 @@ export const Awards = () => {
     <section className="bg-[#0a0a0a] text-white py-20 md:py-32">
       <div className="max-w-[1440px] mx-auto px-6">
         <h2 className="text-[#45CC82] font-bold text-xs tracking-[0.2em] uppercase mb-8">
-          Awards
+          Награды и достижения
         </h2>
 
         <div className="border-t border-white/20">

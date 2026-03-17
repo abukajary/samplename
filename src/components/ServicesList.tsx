@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'; // Так как мы юзаем роутер, правильнее использовать Link
+import { Link } from 'react-router-dom';
 
 type ServiceLink = {
   label: string;
@@ -7,37 +7,42 @@ type ServiceLink = {
 
 type ServiceItem = {
   title: string;
+  subtitle?: string;
   description: string;
   links?: ServiceLink[]; 
 };
 
+// Тексты взяты прямо из твоего ТЗ
 const servicesData: ServiceItem[] = [
   {
-    title: 'Real World Experience Design',
-    description: 'In today’s algorithm-driven world, every moment is a chance to connect, shop, share, or belong. Our digital marketing services create seamless cross-platform ecosystems that blend media, content, and commerce. Powered by 8,000+ media specialists, we test, refine, and scale ideas in real time to meet people where they are and move with them wherever they go.',
+    title: 'Почему нас выбирают',
+    subtitle: '12 лет опыта на рынке',
+    description: 'Pulse Media работает на рынке медиаразмещения более 12 лет и реализовала сотни рекламных кампаний для различных отраслей бизнеса.',
     links: [
-      { label: 'Performance Marketing Services: Transforming Businesses', url: '/services/performance-marketing/' }
+      { label: 'Смотреть наши кейсы', url: '/work' }
     ]
   },
   {
-    title: 'Business Transformation',
-    description: 'We go beyond optimizing media, we rewire growth. In our most transformative partnerships, we’re not seen as a media agency, but as architects of progress. Our vision is to transform the way media is transacted through transparency, addressability and automation across all media channels.',
-    links: [
-      { label: 'Digital Strategy Services', url: '/services/digital-strategy/' }
-    ]
+    title: 'Широкая сеть площадок',
+    description: 'Мы сотрудничаем с крупнейшими операторами наружной рекламы, digital платформами и медиа площадками, что позволяет нам обеспечивать максимальное покрытие аудитории.',
   },
   {
-    title: 'Digital Marketing Hyper-Specialists',
-    description: 'Brands need more than generalists - they need precision, orchestration, and the power of human ingenuity combined with artificial intelligence. We bring together deep expertise across all major digital marketing channels, to create a single, adaptive system that delivers measurable growth. Our channel specialisms include:',
+    title: 'Экспертиза (OOH & DOOH)',
+    description: 'Pulse Media специализируется на интеграции наружной рекламы (OOH / DOOH) и digital каналов, создавая комплексные рекламные кампании.',
+  },
+  {
+    title: 'Прозрачность и аналитика',
+    description: 'Мы предоставляем клиентам подробную отчетность, аналитику и данные по эффективности рекламных кампаний.',
+  },
+  {
+    title: 'Индивидуальный подход',
+    description: 'Каждый проект разрабатывается с учетом целей бизнеса, особенностей аудитории и бюджета клиента.',
+  },
+  {
+    title: 'Нам доверяют',
+    description: 'Аллюр, Доскар, Кока-кола, Пепси, Зеленое яблоко, Галмарт, Есентай, Мерседес бенц, Форте, Билайн, KCELL, Louis Vuitton, Celine, Givenchy, Loewe, Hennessy, Kenzo Parfums, TAG Heuer, Hublot и другие.',
     links: [
-      { label: 'Search Engine Optimization Services (SEO)', url: '/services/seo/' },
-      { label: 'Paid Search (PPC) Services', url: '/services/paid-search/' },
-      { label: 'Programmatic Advertising Services', url: '/services/programmatic-advertising-services/' },
-      { label: 'Retail Media Advertising', url: '/services/retail-media-advertising/' },
-      { label: 'Paid Social Services', url: '/services/paid-social-services/' },
-      { label: 'Video Advertising Services', url: '/services/video-advertising-services/' },
-      { label: 'Digital OOH Advertising', url: '/services/digital-ooh-advertising/' },
-      { label: 'Affiliate Marketing & Agile Measurement Solutions', url: '/services/affiliate-marketing/' }
+      { label: 'Связаться с нами', url: '/contact' }
     ]
   }
 ];
@@ -52,24 +57,32 @@ export const ServicesList = () => {
             key={idx} 
             className="grid md:grid-cols-12 gap-8 md:gap-16 py-12 md:py-16 border-b border-[#0a0a0a]/20 last:border-b-0"
           >
+            {/* Левая колонка - Заголовок */}
             <div className="md:col-span-5 lg:col-span-4">
-              <h2 className="text-[#45CC82] text-3xl md:text-4xl font-bold tracking-tight">
+              <h2 className="text-[#45CC82] text-3xl md:text-4xl font-bold tracking-tight uppercase">
                 {service.title}
               </h2>
             </div>
 
-            <div className="md:col-span-7 lg:col-span-8 flex flex-col gap-8">
+            {/* Правая колонка - Описание и ссылки */}
+            <div className="md:col-span-7 lg:col-span-8 flex flex-col gap-6">
+              {service.subtitle && (
+                <p className="text-xl font-bold text-[#0a0a0a] uppercase tracking-widest">
+                  {service.subtitle}
+                </p>
+              )}
+              
               <p className="text-gray-800 text-base md:text-lg leading-relaxed max-w-3xl">
                 {service.description}
               </p>
 
               {service.links && service.links.length > 0 && (
-                <div className="flex flex-col items-start gap-4">
+                <div className="flex flex-col items-start gap-4 mt-4">
                   {service.links.map((link, linkIdx) => (
                     <Link
                       key={linkIdx}
                       to={link.url}
-                      className="inline-block text-sm md:text-base font-bold border-b-2 border-[#0a0a0a] pb-1 hover:text-[#45CC82] hover:border-[#45CC82] transition-colors"
+                      className="inline-block text-sm md:text-base font-bold uppercase tracking-widest border-b-2 border-[#0a0a0a] pb-1 hover:text-[#45CC82] hover:border-[#45CC82] transition-colors"
                     >
                       {link.label}
                     </Link>

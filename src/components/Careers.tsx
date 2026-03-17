@@ -15,10 +15,10 @@ export const Careers = () => {
 
       <div className="relative z-10 max-w-[1440px] mx-auto px-6 w-full flex flex-col items-center text-center">
         <span className="text-[#45CC82] font-bold text-xs tracking-[0.2em] uppercase mb-4 block">
-          Careers
+          Карьера
         </span>
         <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-16 uppercase max-w-4xl">
-          KICKSTART YOUR CAREER WITH iPROSPECT
+          Начни свою карьеру вместе с Pulse Media
         </h2>
 
         <div className="w-full max-w-2xl border-t border-white/20">
@@ -30,10 +30,10 @@ export const Careers = () => {
           >
             <div className="flex flex-col items-start gap-2 mb-4 md:mb-0 text-left">
               <span className="text-gray-400 text-xs font-bold uppercase tracking-widest">
-                Open roles
+                Акутальные вакансии
               </span>
               <span className="text-2xl md:text-3xl font-bold group-hover:text-[#45CC82] transition-colors">
-                Open worldwide roles
+                Открытые позиции
               </span>
             </div>
             

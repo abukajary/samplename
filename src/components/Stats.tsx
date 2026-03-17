@@ -1,8 +1,8 @@
 const statsData = [
-  { title: 'Countries', value: '93' },
-  { title: 'Experts', value: '8,000+' },
-  { title: 'Office locations', value: '126' },
-  { title: 'Clients', value: '2,600+' },
+  { title: 'Лет на рынке', value: '12' },
+  { title: 'Рекламных кампаний', value: '500+' },
+  { title: 'Медиа площадок', value: '1000+' },
+  { title: 'Крупных клиентов', value: '50+' },
 ];
 
 export const Stats = () => {
@@ -10,10 +10,10 @@ export const Stats = () => {
     <section className="bg-white text-[#0a0a0a]">
       <div className="max-w-[1440px] mx-auto px-6 pt-24 pb-12">
         <span className="text-[#45CC82] font-bold text-xs tracking-[0.2em] uppercase block mb-4">
-          Stats
+          В цифрах
         </span>
         <h2 className="text-5xl md:text-7xl font-bold tracking-tighter uppercase">
-          Focused on growth
+          Фокус на результат
         </h2>
       </div>
 

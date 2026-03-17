@@ -6,14 +6,9 @@ type Language = { label: string; active?: boolean; };
 type Market = { name: string; langs: Language[]; };
 
 const markets: Market[] = [
-  { name: 'Global', langs: [{ label: 'English', active: true }] },
-  { name: 'Canada', langs: [{ label: 'English' }, { label: 'French' }] },
-  { name: 'Denmark', langs: [{ label: 'English' }] },
-  { name: 'Germany', langs: [{ label: 'German' }] },
-  { name: 'Latin America', langs: [{ label: 'Spanish' }] },
-  { name: 'Spain', langs: [{ label: 'Spanish' }, { label: 'English' }] },
-  { name: 'United Kingdom', langs: [{ label: 'English' }] },
-  { name: 'United States', langs: [{ label: 'English' }] },
+  { name: 'Русский', langs: [{ label: 'Русский язык', active: true }] },
+  { name: 'Қазақша', langs: [{ label: 'Қазақ тілі' }]},
+  { name: 'English', langs: [{ label: 'English' }] },
 ];
 
 export const Header = ({ transparentAtTop = false }: { transparentAtTop?: boolean }) => {
@@ -71,8 +66,8 @@ export const Header = ({ transparentAtTop = false }: { transparentAtTop?: boolea
             >
               <Menu size={24} />
             </button>
-            <Link to="/" className="text-2xl font-bold tracking-widest relative" onClick={closeMobileMenu}>
-              SAMPLEnAME
+            <Link to="/" className="text-2xl font-bold tracking-widest relative uppercase" onClick={closeMobileMenu}>
+              Pulse Media
             </Link>
           </div>
 
@@ -81,35 +76,35 @@ export const Header = ({ transparentAtTop = false }: { transparentAtTop?: boolea
               to="/about" 
               className={`transition-colors hover:text-gray-400 ${isActive('/about') ? 'text-gray-400' : 'text-white'}`}
             >
-              About
+              О нас
             </Link>
             <Link 
               to="/services" 
               className={`transition-colors hover:text-gray-400 ${isActive('/services') ? 'text-gray-400' : 'text-white'}`}
             >
-              Services
+              Партнерство
             </Link>
             <Link 
               to="/work" 
               className={`transition-colors hover:text-gray-400 ${isActive('/work') ? 'text-gray-400' : 'text-white'}`}
             >
-              Work
+              Проекты
             </Link>
             <Link 
               to="/insights" 
               className={`transition-colors hover:text-gray-400 ${isActive('/insights') ? 'text-gray-400' : 'text-white'}`}
             >
-              Thoughts & Views
+              Блог
             </Link>
           </nav>
 
           <div className="flex items-center gap-4 md:gap-6 text-sm font-medium relative z-[70]">
             <button onClick={() => setIsSidebarOpen(true)} className="flex items-center gap-2 text-white hover:text-gray-300 transition-colors cursor-pointer">
               <Globe size={18} />
-              <span className="hidden md:inline">Global</span>
+              <span className="hidden md:inline"></span>
             </button>
             <Link to="/contact" className={`hidden md:flex items-center gap-2 transition-colors hover:text-gray-300 text-white`} onClick={closeMobileMenu}>
-              Get in touch
+              Контакты
               <ArrowRight size={18} />
             </Link>
           </div>
@@ -123,7 +118,7 @@ export const Header = ({ transparentAtTop = false }: { transparentAtTop?: boolea
       >
         <div className="h-20 px-6 flex items-center justify-between border-b border-white/20 shrink-0">
           <span className="text-2xl font-bold tracking-widest">
-            SAMPLEnAME
+            PULSE MEDIA
           </span>
           <button onClick={closeMobileMenu} className="p-2 -mr-2">
             <X size={28} />
@@ -132,21 +127,21 @@ export const Header = ({ transparentAtTop = false }: { transparentAtTop?: boolea
 
         <nav className="flex flex-col px-6 py-12 gap-8 text-3xl font-bold overflow-y-auto">
           <Link to="/about" onClick={closeMobileMenu} className={`transition-colors ${isActive('/about') ? 'text-[#45CC82]' : 'text-white'}`}>
-            About
+            О нас
           </Link>
           <Link to="/services" onClick={closeMobileMenu} className={`transition-colors ${isActive('/services') ? 'text-[#45CC82]' : 'text-white'}`}>
-            Services
+            Сотрудничество
           </Link>
           <Link to="/work" onClick={closeMobileMenu} className={`transition-colors ${isActive('/work') ? 'text-[#45CC82]' : 'text-white'}`}>
-            Work
+            Проекты
           </Link>
           <Link to="/insights" onClick={closeMobileMenu} className={`transition-colors ${isActive('/insights') ? 'text-[#45CC82]' : 'text-white'}`}>
-            Thoughts & Views
+            Блог
           </Link>
           
           <div className="mt-8 pt-8 border-t border-white/20">
             <Link to="/contact" onClick={closeMobileMenu} className="flex items-center gap-4 text-xl">
-              Get in touch
+              Контакты
               <ArrowRight size={24} />
             </Link>
           </div>

@@ -4,31 +4,46 @@ import { Plus, X } from 'lucide-react';
 
 const servicesData = [
   {
-    title: 'Real World Experience Design',
-    description: 'In today’s algorithm-driven world, every moment is a chance to connect, shop, share, or belong. Our digital marketing services create seamless cross-platform ecosystems that blend media, content, and commerce. Powered by 8,000+ media specialists, we test, refine, and scale ideas in real time to meet people where they are and move with them wherever they go.',
+    title: '1.	Почему нас выбирают и нам доверяют',
+    subtitle: '12 лет опыта на рынке',
+    description: 'Pulse Media работает на рынке медиаразмещения более 12 лет и реализовала сотни рекламных кампаний для различных отраслей бизнеса',
     links: [
-      { label: 'Performance Marketing Services: Transforming Businesses', url: '/services/performance-marketing/' }
+      { label: 'Ссылка, если требуется', url: '/services/performance-marketing/' }
     ]
   },
   {
-    title: 'Business Transformation',
-    description: 'We go beyond optimizing media, we rewire growth. In our most transformative partnerships, we’re not seen as a media agency, but as architects of progress. Our vision is to transform the way media is transacted through transparency, addressability and automation across all media channels.',
+    title: '2.	Широкая сеть медиа площадок',
+    description: 'Мы сотрудничаем с крупнейшими операторами наружной рекламы, digital платформами и медиа площадками, что позволяет нам обеспечивать максимальное покрытие аудитории',
     links: [
-      { label: 'Digital Strategy Services', url: '/services/digital-strategy/' }
+      { label: 'Ссылка, если требуется', url: '/services/digital-strategy/' }
     ]
   },
   {
-    title: 'Digital Marketing Hyper-Specialists',
-    description: 'Brands need more than generalists - they need precision, orchestration, and the power of human ingenuity combined with artificial intelligence. We bring together deep expertise across all major digital marketing channels, to create a single, adaptive system that delivers measurable growth. Our channel specialisms include:',
+    title: '3.	Экспертиза в наружной и digital рекламе',
+    description: 'Pulse Media специализируется на интеграции наружной рекламы (OOH / DOOH) и digital каналов, создавая комплексные рекламные кампании',
     links: [
-      { label: 'Search Engine Optimization Services (SEO)', url: '/services/seo/' },
-      { label: 'Paid Search (PPC) Services', url: '/services/paid-search/' },
-      { label: 'Programmatic Advertising Services', url: '/services/programmatic-advertising-services/' },
-      { label: 'Retail Media Advertising', url: '/services/retail-media-advertising/' },
-      { label: 'Paid Social Services', url: '/services/paid-social-services/' },
-      { label: 'Video Advertising Services', url: '/services/video-advertising-services/' },
-      { label: 'Digital OOH Advertising', url: '/services/digital-ooh-advertising/' },
-      { label: 'Affiliate Marketing & Agile Measurement Solutions', url: '/services/affiliate-marketing/' }
+      { label: 'Ссылка, если требуется 1', url: '/services/seo/' }
+    ]
+  },
+  {
+    title: '4.	Прозрачность и аналитика',
+    description: 'Мы предоставляем клиентам подробную отчетность, аналитику и данные по эффективности рекламных кампаний',
+    links: [
+      { label: 'Ссылка, если требуется 1', url: '/services/seo/' }
+    ]
+  },
+  {
+    title: '5.	Индивидуальный подход',
+    description: 'Каждый проект разрабатывается с учетом целей бизнеса, особенностей аудитории и бюджета клиента',
+    links: [
+      { label: 'Ссылка, если требуется 1', url: '/services/seo/' }
+    ]
+  },
+  {
+    title: '6.	Примеры крупных компаний с кем работаем ',
+    description: 'Здесь чисто фото партнеров?',
+    links: [
+      { label: 'Ссылка, если требуется 1', url: '/services/seo/' }
     ]
   }
 ];
@@ -46,10 +61,10 @@ export const HomeServices = () => {
         
         <div className="mb-16 md:mb-24">
           <span className="text-[#45CC82] font-bold text-[11px] md:text-xs tracking-[0.2em] uppercase block mb-4">
-            Services
+            ПАРТНЕРСТВО
           </span>
           <h2 className="text-5xl md:text-7xl lg:text-[5rem] font-bold tracking-tight uppercase leading-none max-w-4xl">
-            Global digital marketing
+            Цифровой маркетинг
           </h2>
         </div>
 
@@ -60,16 +75,16 @@ export const HomeServices = () => {
             return (
               <div 
                 key={index} 
-                className="border-b border-[#0a0a0a] overflow-hidden"
+                className="border-b border-[#0a0a0a] overflow-hidden "
               >
                 <button
                   onClick={() => toggleAccordion(index)}
-                  className="w-full flex items-center justify-between py-6 md:py-8 text-left focus:outline-none group"
+                  className="w-full flex items-center justify-between py-6 md:py-8 text-left focus:outline-none group cursor-pointer"
                 >
-                  <h3 className={`text-xl md:text-2xl font-bold transition-colors duration-300 ${isOpen ? 'text-[#45CC82]' : 'text-[#0a0a0a] group-hover:text-gray-600'}`}>
+                  <h3 className={`cursor-pointer text-xl md:text-2xl font-bold transition-colors duration-300 ${isOpen ? 'text-[#45CC82]' : 'text-[#0a0a0a] group-hover:text-gray-600'}`}>
                     {service.title}
                   </h3>
-                  <div className={`transition-colors duration-300 ${isOpen ? 'text-[#45CC82]' : 'text-[#0a0a0a]'}`}>
+                  <div className={`cursor-pointer ransition-colors duration-300 ${isOpen ? 'text-[#45CC82]' : 'text-[#0a0a0a]'}`}>
                     {isOpen ? <X size={28} strokeWidth={1.5} /> : <Plus size={28} strokeWidth={1.5} />}
                   </div>
                 </button>
@@ -84,6 +99,9 @@ export const HomeServices = () => {
                       <div className="hidden md:block"></div>
                       
                       <div className="flex flex-col gap-8 pr-4">
+                        <p className={`text-base md:text-2xl leading-relaxed ${service.subtitle ? 'block' : 'hidden'}`}>
+                          {service.subtitle}
+                        </p>
                         <p className="text-gray-600 text-sm md:text-base leading-relaxed">
                           {service.description}
                         </p>
@@ -111,12 +129,12 @@ export const HomeServices = () => {
           })}
         </div>
 
-        <div className="mt-16 md:mt-24 flex justify-center">
+        <div className="mt-16 md:mt-24 flex justify-center hidden">
           <Link 
             to="/services"
             className="inline-block text-lg md:text-xl font-bold border-b-2 border-[#0a0a0a] pb-1 hover:text-[#45CC82] hover:border-[#45CC82] transition-colors"
           >
-            View all
+            Смотреть все
           </Link>
         </div>
 
