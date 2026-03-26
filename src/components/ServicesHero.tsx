@@ -14,7 +14,7 @@ export const ServicesHero = () => {
 
       <div className="relative z-10 max-w-[1440px] mx-auto px-6 w-full">
         <div className="max-w-3xl">
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 leading-tight uppercase">
+          <h1 className="text-4xl md:text-7xl font-bold tracking-tight mb-8 leading-tight uppercase">
             <span className="text-[#45CC82]">Стратегическое</span><br />
             Партнерство
           </h1>
