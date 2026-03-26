@@ -89,19 +89,7 @@ export const HomeServices = () => {
                           {service.description}
                         </p>
                         
-                        {service.links && (
-                          <div className="flex flex-col items-start gap-4">
-                            {service.links.map((link, linkIdx) => (
-                              <Link
-                                key={linkIdx}
-                                to={link.url}
-                                className="inline-block text-xs md:text-sm font-bold border-b-2 border-[#0a0a0a] pb-0.5 hover:text-[#45CC82] hover:border-[#45CC82] transition-colors"
-                              >
-                                {link.label}
-                              </Link>
-                            ))}
-                          </div>
-                        )}
+                        
                       </div>
                     </div>
                   </div>
