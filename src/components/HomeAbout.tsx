@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import homeAboutImg from '../assets/home-about.jpg'; // Закинь сюда картинку
 
 export const HomeAbout = () => {
@@ -39,13 +38,6 @@ export const HomeAbout = () => {
                 Наша миссия — делать рекламу более точной, заметной и эффективной, помогая бизнесу расти в условиях современной городской медиасреды
               </p>
             </div>
-            
-            <Link 
-              to="/about"
-              className="inline-block text-xl md:text-2xl font-bold border-b-2 border-[#0a0a0a] pb-1 hover:text-[#45CC82] hover:border-[#45CC82] transition-colors w-fit"
-            >
-              О нас
-            </Link>
           </div>
 
         </div>

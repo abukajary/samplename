@@ -1,8 +1,8 @@
 const statsData = [
   { title: 'Лет на рынке', value: '12' },
-  { title: 'Рекламных кампаний', value: '500+' },
-  { title: 'Медиа площадок', value: '1000+' },
+  { title: 'Рекламных кампаний', value: '1000+' },
   { title: 'Крупных клиентов', value: '50+' },
+  { title: 'Довольных клиентов', value: '100%' },
 ];
 
 export const Stats = () => {

@@ -6,8 +6,8 @@ import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { Hero } from './components/Hero';
 import { Stats } from './components/Stats';
-import { Awards } from './components/Awards';
-import { Leadership } from './components/Leadership';
+// import { Awards } from './components/Awards';
+// import { Leadership } from './components/Leadership';
 import { ServicesHero } from './components/ServicesHero';
 import { ServicesList } from './components/ServicesList';
 import { WorkHero } from './components/WorkHero';
@@ -18,32 +18,24 @@ import { ArticlePage } from './pages/ArticlePage';
 import { ProjectPage } from './pages/ProjectPage';
 import { ContactHero } from './components/ContactHero';
 import { ContactForm } from './components/ContactForm';
-import { Careers } from './components/Careers';
 import { PolicyPage } from './pages/PolicyPage';
 import { ScrollToTop } from './components/ScrollToTop';
 import { HomeHero } from './components/HomeHero';
 import { HomeAbout } from './components/HomeAbout';
-import { HomeWork } from './components/HomeWork';
 import { HomeServices } from './components/HomeServices';
-import { HomeInsights } from './components/HomeInsights';
 
 const HomePage = () => (
   <main>
     <HomeHero />
-    <HomeAbout />
-    <HomeWork />
     <HomeServices />
-    <Careers />
-    <HomeInsights />
   </main>
 );
 
 const AboutPage = () => (
   <main className="pt-20">
     <Hero />
+    <HomeAbout />
     <Stats />
-    <Awards />
-    <Leadership />
   </main>
 );
 
@@ -72,13 +64,12 @@ const ContactPage = () => (
   <main>
     <ContactHero />
     <ContactForm />
-    <Careers />
   </main>
 );
 
 const AppContent = () => {
   const location = useLocation();
-  const isTransparentTop = location.pathname === '/' || location.pathname === '/services';
+  const isTransparentTop = location.pathname === '/services';
 
   useEffect(() => {
     const lenis = new Lenis({

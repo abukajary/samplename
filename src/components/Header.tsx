@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Globe, ArrowRight, X, Menu } from 'lucide-react';
+import { ArrowRight, X, Menu } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 type Language = { label: string; active?: boolean; };
@@ -83,26 +83,14 @@ export const Header = ({ transparentAtTop = false }: { transparentAtTop?: boolea
               className={`transition-colors hover:text-gray-400 ${isActive('/services') ? 'text-gray-400' : 'text-white'}`}
             >
               Партнерство
-            </Link>
-            <Link 
-              to="/work" 
-              className={`transition-colors hover:text-gray-400 ${isActive('/work') ? 'text-gray-400' : 'text-white'}`}
-            >
-              Проекты
-            </Link>
-            <Link 
-              to="/insights" 
-              className={`transition-colors hover:text-gray-400 ${isActive('/insights') ? 'text-gray-400' : 'text-white'}`}
-            >
-              Блог
-            </Link>
+            </Link> 
           </nav>
 
           <div className="flex items-center gap-4 md:gap-6 text-sm font-medium relative z-[70]">
-            <button onClick={() => setIsSidebarOpen(true)} className="flex items-center gap-2 text-white hover:text-gray-300 transition-colors cursor-pointer">
+            {/* <button onClick={() => setIsSidebarOpen(true)} className="flex items-center gap-2 text-white hover:text-gray-300 transition-colors cursor-pointer">
               <Globe size={18} />
               <span className="hidden md:inline"></span>
-            </button>
+            </button> */}
             <Link to="/contact" className={`hidden md:flex items-center gap-2 transition-colors hover:text-gray-300 text-white`} onClick={closeMobileMenu}>
               Контакты
               <ArrowRight size={18} />
@@ -131,12 +119,6 @@ export const Header = ({ transparentAtTop = false }: { transparentAtTop?: boolea
           </Link>
           <Link to="/services" onClick={closeMobileMenu} className={`transition-colors ${isActive('/services') ? 'text-[#45CC82]' : 'text-white'}`}>
             Сотрудничество
-          </Link>
-          <Link to="/work" onClick={closeMobileMenu} className={`transition-colors ${isActive('/work') ? 'text-[#45CC82]' : 'text-white'}`}>
-            Проекты
-          </Link>
-          <Link to="/insights" onClick={closeMobileMenu} className={`transition-colors ${isActive('/insights') ? 'text-[#45CC82]' : 'text-white'}`}>
-            Блог
           </Link>
           
           <div className="mt-8 pt-8 border-t border-white/20">

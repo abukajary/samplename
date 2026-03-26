@@ -1,5 +1,5 @@
 import { ChevronDown } from 'lucide-react';
-import homeHeroImg from '../assets/home-hero-portrait.jpg';
+import homeHeroImg from '../assets/tokyo.jpg';
 
 export const HomeHero = () => {
   const handleScroll = () => {
@@ -27,7 +27,7 @@ export const HomeHero = () => {
         <img 
           src={homeHeroImg} 
           alt="Pulse Media" 
-          className="w-full h-full object-cover md:object-contain" 
+          className="w-full h-full object-cover " 
         />
         {/* Затемнение для мобилок, чтобы текст читался поверх фото */}
         <div className="absolute inset-0 bg-black/40 md:hidden z-10"></div>
