@@ -24,7 +24,6 @@ type ServiceItem = {
   links?: ServiceLink[]; 
 };
 
-// 5 основных пунктов
 const servicesData: ServiceItem[] = [
   {
     title: 'Почему нас выбирают',
@@ -49,7 +48,6 @@ const servicesData: ServiceItem[] = [
   }
 ];
 
-// Заглушки для логотипов брендов
 const partnersLogos = [
   { name: 'Аллюр', url: allur_logo },
   { name: 'Доскар', url: '' },
@@ -70,7 +68,6 @@ export const ServicesList = () => {
     <section className="bg-white text-[#0a0a0a] py-20 md:py-32">
       <div className="max-w-[1440px] mx-auto px-6">
         
-        {/* Блок 1: Список преимуществ */}
         {servicesData.map((service, idx) => (
           <div 
             key={idx} 
@@ -110,7 +107,6 @@ export const ServicesList = () => {
           </div>
         ))}
 
-        {/* Блок 2: Нам доверяют (Партнеры) */}
         <div className="mt-16 md:mt-24 pt-16 md:pt-24 border-t border-[#0a0a0a]">
           <div className="grid lg:grid-cols-12 gap-12 md:gap-16">
             
@@ -123,7 +119,7 @@ export const ServicesList = () => {
                 <img 
                   src={billboardImg}
                   alt="City Billboard Placeholder" 
-                  className="absolute inset-0 w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                  className="absolute inset-0 w-full h-full object-cover"
                 />
               </div>
 
@@ -132,19 +128,28 @@ export const ServicesList = () => {
               </p>
             </div>
 
+            {/* Блок с логотипами */}
             <div className="lg:col-span-7">
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 md:gap-6 h-full content-start">
+              {/* Используем flex wrap вместо жесткого grid, чтобы логотипы разной длины вставали естественно */}
+              <div className="flex flex-wrap gap-4 md:gap-6">
                 {partnersLogos.map((logo, idx) => (
                   <div 
                     key={idx} 
-                    className="aspect-video flex items-center justify-center border border-gray-200 p-4 bg-gray-50 hover:bg-white hover:border-[#45CC82] transition-all duration-300 group"
+                    /* Убрали aspect-video, задали фиксированную высоту. 
+                       На мобилках flex-grow растягивает их на доступную ширину, 
+                       на десктопе они имеют минимальную ширину 120px. 
+                    */
+                    className="flex-grow md:flex-grow-0 min-w-[120px] h-24 flex items-center justify-center border border-gray-200 p-4 bg-gray-50 hover:bg-white hover:border-[#45CC82] transition-all duration-300 group"
                   >
-                    {/* ВОТ ТУТ ГЛАВНОЕ ИЗМЕНЕНИЕ: Проверяем, есть ли url */}
                     {logo.url ? (
                       <img 
                         src={logo.url} 
                         alt={logo.name} 
-                        className="max-w-full max-h-full object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+                        /* Убрали grayscale (ч/б эффект). 
+                           Картинка всегда цветная и яркая.
+                           object-contain гарантирует, что она не обрежется.
+                        */
+                        className="w-full h-full object-contain"
                       />
                     ) : (
                       <span className="font-bold text-gray-400 text-center uppercase text-xs tracking-widest group-hover:text-[#45CC82] transition-colors">
