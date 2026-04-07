@@ -11,6 +11,7 @@ import forte_logo from '../assets/forte_logo.png';
 import beeline_logo from '../assets/Beeline_logo.jpg';
 import kcell_logo from '../assets/Kcell_wordmark.svg';
 import lv_logo from '../assets/lv_logo.png';
+import doscar_logo from '../assets/doscar_logo.png'
 
 type ServiceLink = {
   label: string;
@@ -52,7 +53,7 @@ const servicesData: ServiceItem[] = [
 // Логотипы брендов
 const partnersLogos = [
   { name: 'Аллюр', url: allur_logo },
-  { name: 'Доскар', url: '' },
+  { name: 'Доскар', url: doscar_logo },
   { name: 'Кока-кола', url: coca_cola_logo },
   { name: 'Пепси', url: pepsi_logo },
   { name: 'Зеленое яблоко', url: green_apple_logo },
