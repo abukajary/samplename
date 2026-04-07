@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ArrowRight, X, Menu } from 'lucide-react';
+import { X, Menu } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 type Language = { label: string; active?: boolean; };
@@ -85,7 +85,7 @@ export const Header = ({ transparentAtTop = false }: { transparentAtTop?: boolea
               Партнерство
             </Link> 
             <Link 
-              to="/services" 
+              to="/contact" 
               className={`transition-colors hover:text-gray-300 text-white`}
             >
               Контакты
@@ -93,24 +93,19 @@ export const Header = ({ transparentAtTop = false }: { transparentAtTop?: boolea
           </nav>
 
           <div className="flex items-center gap-4 md:gap-6 text-sm font-medium relative z-[70]">
-            {/* <button onClick={() => setIsSidebarOpen(true)} className="flex items-center gap-2 text-white hover:text-gray-300 transition-colors cursor-pointer">
-              <Globe size={18} />
-              <span className="hidden md:inline"></span>
-            </button> */}
-            {/* <Link to="/contact" className={`hidden md:flex items-center gap-2 transition-colors hover:text-gray-300 text-white`} onClick={closeMobileMenu}>
-              Контакты
-              <ArrowRight size={18} />
-            </Link> */}
+            {/* Резерв под другие кнопки, если понадобятся */}
           </div>
         </div>
       </header>
 
+      {/* --- МОБИЛЬНОЕ МЕНЮ --- */}
       <div 
         className={`fixed inset-0 bg-[#0a0a0a] text-white z-[80] transition-transform duration-500 ease-in-out md:hidden flex flex-col ${
           isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full'
         }`}
       >
         <div className="h-20 px-6 flex items-center justify-between border-b border-white/20 shrink-0">
+          {/* Логотип в мобильном меню теперь кликабельный и реагирует */}
           <Link to="/" onClick={closeMobileMenu} className="text-2xl font-bold tracking-widest uppercase">
             PULSE MEDIA
           </Link>
@@ -126,13 +121,10 @@ export const Header = ({ transparentAtTop = false }: { transparentAtTop?: boolea
           <Link to="/services" onClick={closeMobileMenu} className={`transition-colors ${isActive('/services') ? 'text-[#45CC82]' : 'text-white'}`}>
             Партнерство
           </Link>
-          
-          <div className="mt-8 pt-8 border-t border-white/20">
-            <Link to="/contact" onClick={closeMobileMenu} className="flex items-center gap-4 text-xl">
-              Контакты
-              <ArrowRight size={24} />
-            </Link>
-          </div>
+          {/* Контакты теперь выглядят абсолютно так же, как остальные пункты */}
+          <Link to="/contact" onClick={closeMobileMenu} className={`transition-colors ${isActive('/contact') ? 'text-[#45CC82]' : 'text-white'}`}>
+            Контакты
+          </Link>
         </nav>
       </div>
 
@@ -143,6 +135,7 @@ export const Header = ({ transparentAtTop = false }: { transparentAtTop?: boolea
         }`}
       />
 
+      {/* --- САЙДБАР ДЛЯ ЯЗЫКОВ (если используешь) --- */}
       <aside
         data-lenis-prevent="true"
         className={`fixed top-0 right-0 h-[100dvh] w-full md:w-[400px] bg-white text-[#0a0a0a] z-[90] p-8 md:p-12 overflow-y-auto transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] ${
