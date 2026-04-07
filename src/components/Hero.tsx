@@ -4,7 +4,7 @@ export const Hero = () => {
   return (
     <section className="bg-[#0a0a0a] text-white">
       <div className="max-w-[1440px] mx-auto px-6 py-20 md:py-32">
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-16 md:mb-24 leading-tight uppercase">
+        <h1 className="text-4xl md:text-7xl font-bold tracking-tight mb-16 md:mb-24 leading-tight uppercase">
           МЫ СОЗДАЕМ <br />
           <span className="text-[#45CC82]">СТРАТЕГИЧЕСКИЕ РЕШЕНИЯ</span> ДЛЯ<br />
           РОСТА БИЗНЕСА
