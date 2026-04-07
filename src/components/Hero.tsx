@@ -1,4 +1,4 @@
-import heroImage from '../assets/hero1.jpg';
+import heroImage from '../assets/hero1.jpeg';
 
 export const Hero = () => {
   return (
@@ -15,7 +15,8 @@ export const Hero = () => {
             <img
               src={heroImage}
               alt="Pulse Media team"
-              className="w-full h-auto object-cover rounded-xl"
+              // ИЗМЕНЕНИЕ ЗДЕСЬ: убрали h-auto, задали адаптивную высоту + object-center
+              className="w-full h-[300px] md:h-[500px] lg:h-[600px] object-cover object-center rounded-xl"
             />
           </div>
 

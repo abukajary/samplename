@@ -74,15 +74,21 @@ export const Header = ({ transparentAtTop = false }: { transparentAtTop?: boolea
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium relative z-[70]">
             <Link 
               to="/about" 
-              className={`transition-colors hover:text-gray-400 ${isActive('/about') ? 'text-gray-400' : 'text-white'}`}
+              className={`transition-colors hover:text-gray-300 text-white`}
             >
               О нас
             </Link>
             <Link 
               to="/services" 
-              className={`transition-colors hover:text-gray-400 ${isActive('/services') ? 'text-gray-400' : 'text-white'}`}
+              className={`transition-colors hover:text-gray-300 text-white`}
             >
               Партнерство
+            </Link> 
+            <Link 
+              to="/services" 
+              className={`transition-colors hover:text-gray-300 text-white`}
+            >
+              Контакты
             </Link> 
           </nav>
 
@@ -91,10 +97,10 @@ export const Header = ({ transparentAtTop = false }: { transparentAtTop?: boolea
               <Globe size={18} />
               <span className="hidden md:inline"></span>
             </button> */}
-            <Link to="/contact" className={`hidden md:flex items-center gap-2 transition-colors hover:text-gray-300 text-white`} onClick={closeMobileMenu}>
+            {/* <Link to="/contact" className={`hidden md:flex items-center gap-2 transition-colors hover:text-gray-300 text-white`} onClick={closeMobileMenu}>
               Контакты
               <ArrowRight size={18} />
-            </Link>
+            </Link> */}
           </div>
         </div>
       </header>

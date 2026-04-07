@@ -22,12 +22,11 @@ import { PolicyPage } from './pages/PolicyPage';
 import { ScrollToTop } from './components/ScrollToTop';
 import { HomeHero } from './components/HomeHero';
 import { HomeAbout } from './components/HomeAbout';
-import { HomeServices } from './components/HomeServices';
+// import { HomeServices } from './components/HomeServices';
 
 const HomePage = () => (
   <main>
     <HomeHero />
-    <HomeServices />
   </main>
 );
 

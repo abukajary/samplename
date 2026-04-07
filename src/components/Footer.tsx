@@ -38,7 +38,7 @@ export const Footer = () => {
         </div>
 
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-t border-white/10 pt-8 text-xs text-gray-500">
-          <p className="font-semibold tracking-wider uppercase">Партнер DASM</p>
+          <p className="font-semibold tracking-wider uppercase">ПАРТНЕР DASM GROUP</p>
           <p>© 2026 PULSE MEDIA. Все права защищены.</p>
         </div>
       </div>

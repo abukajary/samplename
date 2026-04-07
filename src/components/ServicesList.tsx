@@ -1,16 +1,16 @@
 import { Link } from 'react-router-dom';
 import billboardImg from '../assets/billboard-placeholder.jpg';
-import allur_logo from '../assets/allur_logo.png'
-import coca_cola_logo from '../assets/coca_cola_logo.png'
-import pepsi_logo from '../assets/pepsi_logo.png'
-import green_apple_logo from '../assets/green_apple_logo.jpg'
-import galmart_logo from '../assets/galmart_logo.webp'
-import esentai_logo from '../assets/esentai_logo.jpg'
-import merc_logo from '../assets/merc_logo.png'
-import forte_logo from '../assets/forte_logo.png'
-import beeline_logo from '../assets/Beeline_logo.jpg'
-import kcell_logo from '../assets/Kcell_wordmark.svg'
-import lv_logo from '../assets/lv_logo.png'
+import allur_logo from '../assets/allur_logo.png';
+import coca_cola_logo from '../assets/coca_cola_logo.png';
+import pepsi_logo from '../assets/pepsi_logo.png';
+import green_apple_logo from '../assets/green_apple_logo.jpg';
+import galmart_logo from '../assets/galmart_logo.webp';
+import esentai_logo from '../assets/esentai_logo.jpg';
+import merc_logo from '../assets/merc_logo.png';
+import forte_logo from '../assets/forte_logo.png';
+import beeline_logo from '../assets/Beeline_logo.jpg';
+import kcell_logo from '../assets/Kcell_wordmark.svg';
+import lv_logo from '../assets/lv_logo.png';
 
 type ServiceLink = {
   label: string;
@@ -24,6 +24,7 @@ type ServiceItem = {
   links?: ServiceLink[]; 
 };
 
+// 5 основных пунктов
 const servicesData: ServiceItem[] = [
   {
     title: 'Почему нас выбирают',
@@ -48,6 +49,7 @@ const servicesData: ServiceItem[] = [
   }
 ];
 
+// Логотипы брендов
 const partnersLogos = [
   { name: 'Аллюр', url: allur_logo },
   { name: 'Доскар', url: '' },
@@ -65,9 +67,10 @@ const partnersLogos = [
 
 export const ServicesList = () => {
   return (
-    <section className="bg-white text-[#0a0a0a] py-20 md:py-32">
+    <section className="bg-white text-[#0a0a0a] py-20 md:py-32 overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6">
         
+        {/* Блок 1: Список преимуществ */}
         {servicesData.map((service, idx) => (
           <div 
             key={idx} 
@@ -107,60 +110,69 @@ export const ServicesList = () => {
           </div>
         ))}
 
+        {/* Блок 2: Нам доверяют (Динамичные логотипы) */}
+        
+
+        {/* Блок 3: Где нам доверяют (Билборды) */}
         <div className="mt-16 md:mt-24 pt-16 md:pt-24 border-t border-[#0a0a0a]">
-          <div className="grid lg:grid-cols-12 gap-12 md:gap-16">
-            
-            <div className="lg:col-span-5">
-              <h2 className="text-[#45CC82] text-3xl md:text-4xl font-bold tracking-tight uppercase mb-8">
-                Нам доверяют
-              </h2>
-              
-              <div className="aspect-[4/3] w-full relative overflow-hidden bg-gray-200">
-                <img 
-                  src={billboardImg}
-                  alt="City Billboard Placeholder" 
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-              </div>
+          <div className="max-w-3xl mb-8 md:mb-12">
+            <h2 className="text-[#45CC82] text-3xl md:text-4xl font-bold tracking-tight uppercase mb-6">
+              Где нам доверяют
+            </h2>
+            <p className="text-gray-800 text-base md:text-lg leading-relaxed">
+              Мы гордимся сотрудничеством с ведущими брендами, обеспечивая им лучшее размещение на улицах крупнейших городов. Наш охват позволяет масштабировать кампании с максимальной видимостью.
+            </p>
+          </div>
+          
+          <div className="w-full aspect-[16/9] md:aspect-[21/9] relative overflow-hidden bg-gray-200">
+            <img 
+              src={billboardImg}
+              alt="City Billboard Placement" 
+              className="absolute inset-0 w-full h-full object-cover transition-all duration-500 hover:scale-105"
+            />
+          </div>
+        </div>
 
-              <p className="text-gray-800 text-base md:text-lg leading-relaxed mt-8 mb-6">
-                Мы гордимся сотрудничеством с ведущими локальными и международными брендами, обеспечивая им лучшее размещение.
-              </p>
+        <div className="mt-6 md:mt-14 pt-6 md:pt-12 ">
+          <h2 className="text-[#45CC82] text-3xl md:text-4xl font-bold tracking-tight uppercase mb-12 md:mb-16 text-center">
+            Нам доверяют
+          </h2>
+          
+          <div className="relative w-full overflow-hidden flex items-center">
+            <style>
+              {`
+                @keyframes marquee {
+                  0% { transform: translateX(0); }
+                  100% { transform: translateX(-50%); }
+                }
+                .animate-marquee {
+                  display: flex;
+                  width: max-content;
+                  animation: marquee 45s linear infinite;
+                }
+              `}
+            </style>
+
+            <div className="animate-marquee items-center">
+              {[...partnersLogos, ...partnersLogos].map((logo, idx) => (
+                <div 
+                  key={idx} 
+                  className="w-40 md:w-56 pr-12 md:pr-24 flex-shrink-0 flex items-center justify-center"
+                >
+                  {logo.url ? (
+                    <img 
+                      src={logo.url} 
+                      alt={logo.name} 
+                      className="max-w-full max-h-16 object-contain"
+                    />
+                  ) : (
+                    <span className="font-bold text-gray-400 text-center uppercase text-xs tracking-widest">
+                      {logo.name}
+                    </span>
+                  )}
+                </div>
+              ))}
             </div>
-
-            {/* Блок с логотипами */}
-            <div className="lg:col-span-7">
-              {/* Используем flex wrap вместо жесткого grid, чтобы логотипы разной длины вставали естественно */}
-              <div className="flex flex-wrap gap-4 md:gap-6">
-                {partnersLogos.map((logo, idx) => (
-                  <div 
-                    key={idx} 
-                    /* Убрали aspect-video, задали фиксированную высоту. 
-                       На мобилках flex-grow растягивает их на доступную ширину, 
-                       на десктопе они имеют минимальную ширину 120px. 
-                    */
-                    className="flex-grow md:flex-grow-0 min-w-[120px] h-24 flex items-center justify-center border border-gray-200 p-4 bg-gray-50 hover:bg-white hover:border-[#45CC82] transition-all duration-300 group"
-                  >
-                    {logo.url ? (
-                      <img 
-                        src={logo.url} 
-                        alt={logo.name} 
-                        /* Убрали grayscale (ч/б эффект). 
-                           Картинка всегда цветная и яркая.
-                           object-contain гарантирует, что она не обрежется.
-                        */
-                        className="w-full h-full object-contain"
-                      />
-                    ) : (
-                      <span className="font-bold text-gray-400 text-center uppercase text-xs tracking-widest group-hover:text-[#45CC82] transition-colors">
-                        {logo.name}
-                      </span>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-
           </div>
         </div>
 

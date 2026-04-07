@@ -1,0 +1,200 @@
+Metadata of original
+
+The data shown is all the metadata we could automatically extract from your file. It may be neither complete nor adequate. Metadata could have been changed or deleted in the past. Please be aware that the metadata is provided without liability.
+
+ Checksum: 1f5997fe22d55dbfa58ae8b1565949a5
+ Filename: original.pdf
+ Filesize: 119 kB
+ Filetype: PDF
+ Filetypeextension: pdf
+ Mimetype: application/pdf
+ Linearized: No
+ Pdfversion: 1.4
+ Pagecount: 4
+ Category: application
+ Custom Metadata: no
+ Metadata Stream: no
+ Tagged: no
+ Userproperties: no
+ Suspects: no
+ Form: none
+ Javascript: no
+ Pages: 4
+ Encrypted: no
+ Page Size: 595.276 x 841.89 pts (A4)
+ Page Rot: 0
+ File Size: 119387 bytes
+ Optimized: no
+ Pdf Version: 1.4
+ Pdf Fonts: 
+  0: 
+   Name: AAXKID+ArialMT
+   Type: CID_TrueType
+   Encoding: Identity-H
+   Embedded: true
+   Subset: true
+   Unicode: true
+   Object Id: 25
+  1: 
+   Name: AAQCKD+ArialMT
+   Type: CID_TrueType
+   Encoding: Identity-H
+   Embedded: true
+   Subset: true
+   Unicode: true
+   Object Id: 26
+  2: 
+   Name: AABFBC+Arial-BoldMT
+   Type: CID_TrueType
+   Encoding: Identity-H
+   Embedded: true
+   Subset: true
+   Unicode: true
+   Object Id: 27
+ Pdf Images: 
+  0: 
+   Page Number: 1
+   Image Number: 0
+   Type: image
+   Width: 195
+   Height: 195
+   Color Space: RGB
+   Color Components: 3
+   Bits Per Component: 8
+   Encoding: image
+   Interpolation: false
+   Object Id: 15
+   X-ppi: 300
+   Y-ppi: 300
+   Size: 8661B
+   Compression Ratio: 7.6%
+  1: 
+   Page Number: 1
+   Image Number: 1
+   Type: smask
+   Width: 195
+   Height: 195
+   Color Space: Gray
+   Color Components: 1
+   Bits Per Component: 8
+   Encoding: image
+   Interpolation: false
+   Object Id: 15
+   X-ppi: 300
+   Y-ppi: 300
+   Size: 60B
+   Compression Ratio: 0.2%
+  2: 
+   Page Number: 2
+   Image Number: 2
+   Type: image
+   Width: 195
+   Height: 195
+   Color Space: RGB
+   Color Components: 3
+   Bits Per Component: 8
+   Encoding: image
+   Interpolation: false
+   Object Id: 18
+   X-ppi: 300
+   Y-ppi: 300
+   Size: 8661B
+   Compression Ratio: 7.6%
+  3: 
+   Page Number: 2
+   Image Number: 3
+   Type: smask
+   Width: 195
+   Height: 195
+   Color Space: Gray
+   Color Components: 1
+   Bits Per Component: 8
+   Encoding: image
+   Interpolation: false
+   Object Id: 18
+   X-ppi: 300
+   Y-ppi: 300
+   Size: 60B
+   Compression Ratio: 0.2%
+  4: 
+   Page Number: 2
+   Image Number: 4
+   Type: image
+   Width: 20
+   Height: 20
+   Color Space: RGB
+   Color Components: 3
+   Bits Per Component: 8
+   Encoding: image
+   Interpolation: false
+   Object Id: 19
+   X-ppi: 144
+   Y-ppi: 144
+   Size: 152B
+   Compression Ratio: 13%
+  5: 
+   Page Number: 2
+   Image Number: 5
+   Type: image
+   Width: 20
+   Height: 20
+   Color Space: RGB
+   Color Components: 3
+   Bits Per Component: 8
+   Encoding: image
+   Interpolation: false
+   Object Id: 19
+   X-ppi: 144
+   Y-ppi: 144
+   Size: 152B
+   Compression Ratio: 13%
+  6: 
+   Page Number: 2
+   Image Number: 6
+   Type: image
+   Width: 20
+   Height: 20
+   Color Space: RGB
+   Color Components: 3
+   Bits Per Component: 8
+   Encoding: image
+   Interpolation: false
+   Object Id: 19
+   X-ppi: 144
+   Y-ppi: 144
+   Size: 152B
+   Compression Ratio: 13%
+  7: 
+   Page Number: 2
+   Image Number: 7
+   Type: image
+   Width: 20
+   Height: 20
+   Color Space: RGB
+   Color Components: 3
+   Bits Per Component: 8
+   Encoding: image
+   Interpolation: false
+   Object Id: 19
+   X-ppi: 144
+   Y-ppi: 144
+   Size: 152B
+   Compression Ratio: 13%
+  8: 
+   Page Number: 4
+   Image Number: 8
+   Type: image
+   Width: 20
+   Height: 20
+   Color Space: RGB
+   Color Components: 3
+   Bits Per Component: 8
+   Encoding: image
+   Interpolation: false
+   Object Id: 19
+   X-ppi: 144
+   Y-ppi: 144
+   Size: 152B
+   Compression Ratio: 13%
+ Raw Header: 25 50 44 46 2D 31 2E 34 0A 25 F6 E4 FC DF 0A 31 20 30 20 6F 62 6A 0A 3C 3C 0A 2F 54 79 70 65 20 2F 43 61 74 61 6C 6F 67 0A 2F 56 65 72 73 69 6F 6E 20 2F 31 2E 34 0A 2F 50 61 67 65 73 20 32 20 30 20 52 0A 3E 3E 0A 65 6E 64 6F 62 6A 0A 32 20 30 20 6F 62 6A 0A 3C 3C 0A 2F 54 79 70 65 20 2F 50 61 67 65 73 0A 2F 4B 69 64 73 20 5B 33 20 30 20 52 20 34 20 30 20 52 20 35 20 30 20 52 20 36
+ Mediabox: 0: [object Object],[object Object],[object Object],[object Object], 1: [object Object],[object Object],[object Object],[object Object], 2: [object Object],[object Object],[object Object],[object Object], 3: [object Object],[object Object],[object Object],[object Object]
