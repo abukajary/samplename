@@ -61,7 +61,7 @@ export const Header = ({ transparentAtTop = false }: { transparentAtTop?: boolea
         <div className="max-w-[1440px] mx-auto px-6 h-20 flex items-center justify-between border-b border-white/20">
           <div className="flex items-center gap-4 z-[70]">
             <button 
-              className="md:hidden p-1 -ml-1 text-white"
+              className="md:hidden p-1 -ml-1 text-white cursor-pointer"
               onClick={() => setIsMobileMenuOpen(true)}
             >
               <Menu size={24} />
@@ -111,10 +111,10 @@ export const Header = ({ transparentAtTop = false }: { transparentAtTop?: boolea
         }`}
       >
         <div className="h-20 px-6 flex items-center justify-between border-b border-white/20 shrink-0">
-          <span className="text-2xl font-bold tracking-widest">
+          <Link to="/" onClick={closeMobileMenu} className="text-2xl font-bold tracking-widest uppercase">
             PULSE MEDIA
-          </span>
-          <button onClick={closeMobileMenu} className="p-2 -mr-2">
+          </Link>
+          <button onClick={closeMobileMenu} className="p-2 -mr-2 cursor-pointer">
             <X size={28} />
           </button>
         </div>
@@ -124,7 +124,7 @@ export const Header = ({ transparentAtTop = false }: { transparentAtTop?: boolea
             О нас
           </Link>
           <Link to="/services" onClick={closeMobileMenu} className={`transition-colors ${isActive('/services') ? 'text-[#45CC82]' : 'text-white'}`}>
-            Сотрудничество
+            Партнерство
           </Link>
           
           <div className="mt-8 pt-8 border-t border-white/20">
