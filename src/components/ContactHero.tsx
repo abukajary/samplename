@@ -25,10 +25,10 @@ export const ContactHero = () => {
               Телефон
             </h3>
             <a 
-              href="tel:+77000000000" 
+              href="tel:+77777731463" 
               className="text-2xl md:text-4xl font-light hover:text-[#45CC82] transition-colors"
             >
-              +7 (700) 000-00-00
+              +7 (777) 773-14-63
             </a>
           </div>
 
